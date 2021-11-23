@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KartaApp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".TambahagtActivity"></activity>
+        <activity android:name=".Edittampilagt"></activity>
+        <activity android:name=".TambahagtActivity" />
         <activity android:name=".TampilagtActivity" />
         <activity android:name=".model.TambahagtActivity" />
         <activity android:name=".RegisterActivity" />

@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
         apiClient = new ApiClient();
 
-        tvTambahanggota = findViewById(R.id.tvTambahanggota);
         cvTambahanggota = findViewById(R.id.cvTambahanggota);
         initView();
 
