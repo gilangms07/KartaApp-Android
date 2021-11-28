@@ -50,7 +50,8 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:backgroundTint="@color/green"/>
+            android:backgroundTint="@color/green"
+            android:imeOptions="actionSend"/>
     <TextView
         android:id="@+id/tvRegister"
         android:layout_width="match_parent"

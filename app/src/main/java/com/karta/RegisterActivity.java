@@ -27,6 +27,11 @@ import retrofit2.Response;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+        }
+
         apiClient = new ApiClient();
 
         etNamaregister = findViewById(R.id.etNamaregister);
@@ -38,7 +43,19 @@ import retrofit2.Response;
         btnRegister = findViewById(R.id.btnRegister);
         initView();
     }
-    private void initView(){
+
+     @Override
+     public boolean onSupportNavigateUp() {
+         onBackPressed();
+         return true;
+     }
+
+     @Override
+     public void onBackPressed() {
+         super.onBackPressed();
+     }
+
+     private void initView(){
         btnRegister.setOnClickListener(v -> {
             String name = etNamaregister.getText().toString();
             String email = etEmailregister.getText().toString();

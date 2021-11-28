@@ -29,8 +29,7 @@
                 android:layout_height="60dp"
                 android:src="@drawable/icon"
                 android:layout_centerVertical="true"
-                android:foregroundGravity="center_vertical">
-            </de.hdodenhof.circleimageview.CircleImageView>
+                android:foregroundGravity="center_vertical"/>
 
             <TextView
                 android:id="@+id/tvNamamain"
@@ -38,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_toEndOf="@+id/imgProfile"
-                android:layout_toStartOf="@+id/imgSetting"
+                android:layout_toStartOf="@+id/imgLogout"
                 android:fontFamily="@font/montserrat"
                 android:textSize="18sp"
                 android:text="Gilang Ganteng"
@@ -51,13 +50,13 @@
                 android:layout_below="@+id/tvNamamain"
                 android:layout_marginStart="8dp"
                 android:layout_toEndOf="@+id/imgProfile"
-                android:layout_toStartOf="@+id/imgSetting"
+                android:layout_toStartOf="@+id/imgLogout"
                 android:fontFamily="@font/montserrat"
                 android:text="RT.08/RW07"
                 android:textColor="@color/green"/>
 
             <ImageView
-                android:id="@+id/imgSetting"
+                android:id="@+id/imgLogout"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
