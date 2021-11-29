@@ -18,7 +18,7 @@ import retrofit2.Response;
 
  public class RegisterActivity extends AppCompatActivity {
 
-    private EditText etNamaregister, etEmailregister, etPasswordregister, etAlamatregister, etRwregister, etRtregister;
+    private EditText etNamaregister, etEmailregister, etPasswordregister, etPasskonf, etAlamatregister, etRwregister, etRtregister;
     private Button btnRegister;
 
     private ApiClient apiClient;
@@ -37,6 +37,7 @@ import retrofit2.Response;
         etNamaregister = findViewById(R.id.etNamaregister);
         etEmailregister = findViewById(R.id.etEmailregister);
         etPasswordregister = findViewById(R.id.etPasswordregister);
+        etPasskonf = findViewById(R.id.etPasskonf);
         etAlamatregister = findViewById(R.id.etAlamatregister);
         etRwregister = findViewById(R.id.etRwregister);
         etRtregister = findViewById(R.id.etRtregister);

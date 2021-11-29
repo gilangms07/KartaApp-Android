@@ -18,7 +18,7 @@ import com.karta.api.ApiClient;
 
 public class MainActivity extends AppCompatActivity {
     private TextView tvTambahanggota;
-    private CardView cvTambahanggota;
+    private CardView cvTambahanggota, cvTampilanggota;
     private ApiClient apiClient;
     private ImageView imgLogout;
 
@@ -29,16 +29,20 @@ public class MainActivity extends AppCompatActivity {
 
         apiClient = new ApiClient();
 
+        cvTampilanggota = findViewById(R.id.cvTampilanggota);
         cvTambahanggota = findViewById(R.id.cvTambahanggota);
         imgLogout = findViewById(R.id.imgLogout);
         initView();
-
-
     }
 
     private void initView() {
         cvTambahanggota.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, TambahagtActivity.class);
+            startActivity(intent);
+        });
+
+        cvTampilanggota.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, TampilagtActivity.class);
             startActivity(intent);
         });
         imgLogout.setOnClickListener(v -> {

@@ -9,23 +9,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
+import com.karta.model.tampil.TampilResponse;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 interface OnClickListener {
-    void onDelete(Anggota anggota);
-    void onEdit(Anggota anggota);
+    void onDelete(TampilResponse anggota);
+    void onEdit(TampilResponse anggota);
 }
 
 public class ListNamaAdapter extends RecyclerView.Adapter<ListNamaAdapter.ListViewHolder> {
     private OnClickListener clickListener;
-    private List<Anggota> listAnggota;
+    private List<TampilResponse> listAnggota;
 
-    public ListNamaAdapter(OnClickListener onClickListener, ArrayList<Anggota> list) {
+    public ListNamaAdapter(OnClickListener onClickListener, ArrayList<TampilResponse> list) {
         this.clickListener = onClickListener;
         this.listAnggota = list;
     }
@@ -61,9 +59,9 @@ public class ListNamaAdapter extends RecyclerView.Adapter<ListNamaAdapter.ListVi
 
         }
 
-        void bind(Anggota anggota) {
-            tvNamatampil.setText(anggota.getNama());
-            tvRTRWtampil.setText(anggota.getRtrw());
+        void bind(TampilResponse anggota) {
+            tvNamatampil.setText(anggota.getName());
+            tvRTRWtampil.setText(anggota.getRt());
             tvEmailtampil.setText(anggota.getEmail());
             btnEdittampil.setOnClickListener(v -> {
                 clickListener.onEdit(anggota);
