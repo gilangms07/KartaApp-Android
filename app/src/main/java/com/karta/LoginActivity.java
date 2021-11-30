@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.karta.api.ApiClient;
+import com.karta.api.ErrorAPIConverter;
+import com.karta.api.ErrorResponse;
 import com.karta.model.login.LoginRequest;
 import com.karta.model.login.LoginResponse;
 
@@ -81,7 +83,8 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
                             preferenceUtil.setStatus(true);
                         } else {
-                            Toast.makeText(LoginActivity.this, "Login Gagal ", Toast.LENGTH_SHORT).show();
+                            ErrorResponse errorResponse = ErrorAPIConverter.getItemErrorBody(response.errorBody(), LoginActivity.this);
+                            Toast.makeText(LoginActivity.this, errorResponse.getError(), Toast.LENGTH_SHORT).show();
                         }
                     }
 

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_edittampilagt.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/view_tampil_anggota.xml" value="0.45" />
       </map>
     </option>
