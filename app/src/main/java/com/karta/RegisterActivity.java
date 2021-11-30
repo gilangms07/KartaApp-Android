@@ -32,7 +32,7 @@ import retrofit2.Response;
             getSupportActionBar().setHomeButtonEnabled(true);
         }
 
-        apiClient = new ApiClient();
+        apiClient = new ApiClient(this);
 
         etNamaregister = findViewById(R.id.etNamaregister);
         etEmailregister = findViewById(R.id.etEmailregister);
@@ -81,7 +81,7 @@ import retrofit2.Response;
                             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                             startActivity(intent);
                             RegisterResponse registerResponse = response.body();
-                            Toast.makeText(RegisterActivity.this, "Daftar Berhasil", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "List anggota " + response.body().toString(), Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(RegisterActivity.this, "Gagal Mendaftar", Toast.LENGTH_SHORT).show();
                         }

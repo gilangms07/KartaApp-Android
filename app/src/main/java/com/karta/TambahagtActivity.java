@@ -32,7 +32,7 @@ public class TambahagtActivity extends AppCompatActivity {
             getSupportActionBar().setHomeButtonEnabled(true);
         }
 
-        apiClient = new ApiClient();
+        apiClient = new ApiClient(this);
 
         etNamaagt = findViewById(R.id.etNamaagt);
         etAlamatagt = findViewById(R.id.etAlamatagt);

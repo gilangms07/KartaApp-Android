@@ -11,21 +11,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.karta.model.tampil.TampilResponse;
 
-import java.util.ArrayList;
 import java.util.List;
 
-interface OnClickListener {
+interface TampilAdapterOnClickListener {
     void onDelete(TampilResponse anggota);
     void onEdit(TampilResponse anggota);
 }
 
 public class ListNamaAdapter extends RecyclerView.Adapter<ListNamaAdapter.ListViewHolder> {
-    private OnClickListener clickListener;
+    private TampilAdapterOnClickListener clickListener;
     private List<TampilResponse> listAnggota;
 
-    public ListNamaAdapter(OnClickListener onClickListener, ArrayList<TampilResponse> list) {
-        this.clickListener = onClickListener;
-        this.listAnggota = list;
+    public ListNamaAdapter(TampilAdapterOnClickListener tampilAdapterOnClickListener, List<TampilResponse> tampilResponseList) {
+        this.clickListener = tampilAdapterOnClickListener;
+        this.listAnggota = tampilResponseList;
     }
 
     @NonNull

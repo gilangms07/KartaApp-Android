@@ -19,9 +19,9 @@ interface UserService {
     @POST("/api/register")
     fun register(@Body request: RegisterRequest): Call<RegisterResponse>
 
-    @POST("/api/tambah")
+    @POST("/api/add_member")
     fun tambah(@Body request: TambahRequest): Call<TambahResponse>
 
-    @GET("/api/tampil")
+    @GET("/api/all_member")
     fun tampil(): Call<List<TampilResponse>>
 }

@@ -22,12 +22,15 @@ public class MainActivity extends AppCompatActivity {
     private ApiClient apiClient;
     private ImageView imgLogout;
 
+    private PreferenceUtil preferenceUtil;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        apiClient = new ApiClient();
+        preferenceUtil = new PreferenceUtil(this);
+        apiClient = new ApiClient(this);
 
         cvTampilanggota = findViewById(R.id.cvTampilanggota);
         cvTambahanggota = findViewById(R.id.cvTambahanggota);
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         });
         imgLogout.setOnClickListener(v -> {
             showDialog();
+            preferenceUtil.setStatus(false);
         });
     }
 

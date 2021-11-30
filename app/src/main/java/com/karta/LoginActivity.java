@@ -23,6 +23,8 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private TextView tvRegister;
 
+    private PreferenceUtil preferenceUtil;
+
     private ApiClient apiClient;
 
     @Override
@@ -30,7 +32,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        apiClient = new ApiClient();
+        preferenceUtil = new PreferenceUtil(this);
+        checkLoginStatus();
+
+        apiClient = new ApiClient(this);
 
         edtEmail = findViewById(R.id.etEmail);
         edtPassword = findViewById(R.id.etPassword);
@@ -56,6 +61,13 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    private void checkLoginStatus() {
+        if (preferenceUtil.getStatus()) {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
+    }
+
     private void login(LoginRequest request) {
         apiClient.getUserService().login(request)
                 .enqueue(new Callback<LoginResponse>() {
@@ -67,6 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                             finish();
                             LoginResponse loginResponse = response.body();
                             Toast.makeText(LoginActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
+                            preferenceUtil.setStatus(true);
                         } else {
                             Toast.makeText(LoginActivity.this, "Login Gagal ", Toast.LENGTH_SHORT).show();
                         }

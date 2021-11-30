@@ -1,11 +1,10 @@
 package com.karta;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.karta.api.ApiClient;
@@ -17,16 +16,19 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TampilagtActivity extends AppCompatActivity implements OnClickListener {
+public class TampilagtActivity extends AppCompatActivity implements TampilAdapterOnClickListener {
 
     private RecyclerView rvAnggota;
     private ApiClient apiClient;
+
+    private ListNamaAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tampilagt);
 
-        apiClient = new ApiClient();
+        apiClient = new ApiClient(this);
 
         rvAnggota = findViewById(R.id.rvAnggota);
         tampilAnggota();
@@ -38,6 +40,7 @@ public class TampilagtActivity extends AppCompatActivity implements OnClickListe
                     @Override
                     public void onResponse(Call<List<TampilResponse>> call, Response<List<TampilResponse>> response) {
                         if (response.isSuccessful()) {
+                            setupRecyclerView(response.body());
                             Toast.makeText(TampilagtActivity.this,"List anggota" + response.body().toString(), Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(TampilagtActivity.this, "Gagal Menampilkan", Toast.LENGTH_SHORT).show();
@@ -51,6 +54,12 @@ public class TampilagtActivity extends AppCompatActivity implements OnClickListe
                 });
     }
 
+    private void setupRecyclerView(List<TampilResponse> tampilResponseList) {
+        adapter = new ListNamaAdapter(this, tampilResponseList);
+        rvAnggota.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        rvAnggota.setAdapter(adapter);
+    }
+
     @Override
     public void onDelete(TampilResponse anggota) {
 
@@ -58,6 +67,6 @@ public class TampilagtActivity extends AppCompatActivity implements OnClickListe
 
     @Override
     public void onEdit(TampilResponse anggota) {
-
+        Toast.makeText(this, "nama Anggota " + anggota.getName(), Toast.LENGTH_SHORT).show();
     }
 }
