@@ -19,7 +19,7 @@
             android:name="com.facebook.flipper.android.diagnostics.FlipperDiagnosticActivity"
             android:exported="true" />
         <activity android:name=".Hapustampilagt"></activity>
-        <activity android:name=".Edittampilagt" />
+        <activity android:name=".EdittampilagtActivity" />
         <activity android:name=".TambahagtActivity" />
         <activity android:name=".TampilagtActivity" />
         <activity android:name=".RegisterActivity" />
