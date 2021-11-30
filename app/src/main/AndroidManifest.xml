@@ -18,13 +18,13 @@
         <activity
             android:name="com.facebook.flipper.android.diagnostics.FlipperDiagnosticActivity"
             android:exported="true" />
-        <activity android:name=".Hapustampilagt"></activity>
         <activity android:name=".EdittampilagtActivity" />
         <activity android:name=".TambahagtActivity" />
         <activity android:name=".TampilagtActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity"
             android:exported="true">
+            android:name
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

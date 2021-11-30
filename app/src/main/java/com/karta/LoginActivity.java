@@ -65,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         if (preferenceUtil.getStatus()) {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 

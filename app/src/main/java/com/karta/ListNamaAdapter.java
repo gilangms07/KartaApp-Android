@@ -27,6 +27,11 @@ public class ListNamaAdapter extends RecyclerView.Adapter<ListNamaAdapter.ListVi
         this.listAnggota = tampilResponseList;
     }
 
+    public void updateData(List<TampilResponse> listAnggota){
+        this.listAnggota.clear();
+        this.listAnggota.addAll(listAnggota);
+        notifyDataSetChanged();
+    }
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -64,6 +69,9 @@ public class ListNamaAdapter extends RecyclerView.Adapter<ListNamaAdapter.ListVi
             tvEmailtampil.setText(anggota.getEmail());
             btnEdittampil.setOnClickListener(v -> {
                 clickListener.onEdit(anggota);
+            });
+            btnHapustampil.setOnClickListener(v -> {
+                clickListener.onDelete(anggota);
             });
         }
     }

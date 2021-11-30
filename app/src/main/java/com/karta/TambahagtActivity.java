@@ -76,10 +76,8 @@ public class TambahagtActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<TambahResponse> call, Response<TambahResponse> response) {
                         if (response.isSuccessful()) {
-                            Intent intent = new Intent(TambahagtActivity.this, TampilagtActivity.class);
-                            startActivity(intent);
-                            TambahResponse tambahResponse = response.body();
                             Toast.makeText(TambahagtActivity.this, "Berhasil Tambah Data", Toast.LENGTH_SHORT).show();
+                            finish();
                         } else {
                             Toast.makeText(TambahagtActivity.this, "Gagal Menambahkan Data", Toast.LENGTH_SHORT).show();
                         }
