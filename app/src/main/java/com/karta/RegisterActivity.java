@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.karta.api.ApiClient;
+import com.karta.api.ErrorAPIConverter;
+import com.karta.api.ErrorResponse;
 import com.karta.model.register.RegisterRequest;
 import com.karta.model.register.RegisterResponse;
 
@@ -61,14 +63,18 @@ import retrofit2.Response;
             String name = etNamaregister.getText().toString();
             String email = etEmailregister.getText().toString();
             String password = etPasswordregister.getText().toString();
+            String passwordkonfirmasi = etPasskonf.getText().toString();
             String alamat = etAlamatregister.getText().toString();
             String rw = etRwregister.getText().toString();
             String rt = etRtregister.getText().toString();
             RegisterRequest request = new RegisterRequest(
                     name, email, alamat, rt, rw, password
             );
-
-            register(request);
+            if (password.equals(passwordkonfirmasi)) {
+                register(request);
+            } else{
+                Toast.makeText(this, "Password Tidak Sama", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 
@@ -81,9 +87,10 @@ import retrofit2.Response;
                             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                             startActivity(intent);
                             RegisterResponse registerResponse = response.body();
-                            Toast.makeText(RegisterActivity.this, "List anggota " + response.body().toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "Register Berhasil ", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(RegisterActivity.this, "Gagal Mendaftar", Toast.LENGTH_SHORT).show();
+                            ErrorResponse errorResponse = ErrorAPIConverter.getItemErrorBody(response.errorBody(), RegisterActivity.this);
+                            Toast.makeText(RegisterActivity.this, errorResponse.getError(), Toast.LENGTH_SHORT).show();
                         }
                     }
 
