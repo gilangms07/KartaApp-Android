@@ -40,7 +40,7 @@
                 android:layout_toStartOf="@+id/imgLogout"
                 android:fontFamily="@font/montserrat"
                 android:textSize="18sp"
-                android:text="Gilang Ganteng"
+                android:text="Gilang Maulana S"
                 android:textColor="@color/green"/>
 
             <TextView
