@@ -14,13 +14,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.karta.api.ApiClient;
+import com.karta.model.register.RegisterResponse;
+import com.karta.model.user.UserResponse;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
-    private TextView tvTambahanggota;
     private CardView cvTambahanggota, cvTampilanggota;
     private ApiClient apiClient;
     private ImageView imgLogout;
+    private TextView tvNamamain, tvRTRW;
 
     private PreferenceUtil preferenceUtil;
 
@@ -34,8 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
         cvTampilanggota = findViewById(R.id.cvTampilanggota);
         cvTambahanggota = findViewById(R.id.cvTambahanggota);
+        tvNamamain = findViewById(R.id.tvNamamain);
+        tvRTRW = findViewById(R.id.tvRWRT);
         imgLogout = findViewById(R.id.imgLogout);
         initView();
+
+        getUser(preferenceUtil.getEmail());
     }
 
     private void initView() {
@@ -52,6 +62,25 @@ public class MainActivity extends AppCompatActivity {
             showDialog();
             preferenceUtil.setStatus(false);
         });
+    }
+
+    private void getUser(String email) {
+        apiClient.getUserService().getUser(email)
+                .enqueue(new Callback<UserResponse>() {
+                    @Override
+                    public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                        if (response.isSuccessful()) {
+                            UserResponse userResponse = response.body();
+                            tvNamamain.setText(userResponse.getName());
+                            tvRTRW.setText("RT" + userResponse.getRt() + "/ RW" + userResponse.getRw());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<UserResponse> call, Throwable t) {
+
+                    }
+                });
     }
 
     private void showDialog(){

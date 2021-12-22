@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.karta.api.ApiClient;
+import com.karta.api.ErrorAPIConverter;
+import com.karta.api.ErrorResponse;
 import com.karta.model.tambah.TambahRequest;
 import com.karta.model.tambah.TambahResponse;
 
@@ -79,9 +81,11 @@ public class TambahagtActivity extends AppCompatActivity {
                             Intent intent = new Intent(TambahagtActivity.this, TampilagtActivity.class);
                             startActivity(intent);
                             TambahResponse tambahResponse = response.body();
+                            finish();
                             Toast.makeText(TambahagtActivity.this, "Berhasil Tambah Data", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(TambahagtActivity.this, "Gagal Menambahkan Data", Toast.LENGTH_SHORT).show();
+                            ErrorResponse errorResponse = ErrorAPIConverter.getItemErrorBody(response.errorBody(), TambahagtActivity.this);
+                            Toast.makeText(TambahagtActivity.this, errorResponse.getError(), Toast.LENGTH_SHORT).show();
                         }
                     }
 

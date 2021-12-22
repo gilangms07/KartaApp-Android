@@ -60,7 +60,7 @@ public class ListNamaAdapter extends RecyclerView.Adapter<ListNamaAdapter.ListVi
 
         void bind(TampilResponse anggota) {
             tvNamatampil.setText(anggota.getName());
-            tvRTRWtampil.setText(anggota.getRt() + "/" + anggota.getRw());
+            tvRTRWtampil.setText("RT" + anggota.getRt() + "/RW" + anggota.getRw());
             tvEmailtampil.setText(anggota.getEmail());
             btnEdittampil.setOnClickListener(v -> {
                 clickListener.onEdit(anggota);

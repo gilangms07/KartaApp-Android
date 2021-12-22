@@ -9,6 +9,7 @@ import com.karta.model.register.RegisterResponse
 import com.karta.model.tambah.TambahRequest
 import com.karta.model.tambah.TambahResponse
 import com.karta.model.tampil.TampilResponse
+import com.karta.model.user.UserResponse
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -30,4 +31,7 @@ interface UserService {
 
     @PUT("/api/update_member")
     fun update(@Body request: TampilResponse): Call<EditResponse>
+
+    @GET("/api/get_profile")
+    fun getUser(@Query("email") email: String): Call<UserResponse>
 }
