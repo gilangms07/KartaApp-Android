@@ -27,6 +27,10 @@ public class ListNamaAdapter extends RecyclerView.Adapter<ListNamaAdapter.ListVi
         this.listAnggota = tampilResponseList;
     }
 
+    public List<TampilResponse> getListAnggota() {
+        return listAnggota;
+    }
+
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

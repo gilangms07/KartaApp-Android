@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">KartaApp</string>
+    <string name="print">Print</string>
+    <string name="camera_and_location_rationale">Permision dibutuhkan untuk cetak PDF</string>
+    <string name="rationale_ask_ok">Okay</string>
+    <string name="rationale_ask_cancel">Batal</string>
 </resources>

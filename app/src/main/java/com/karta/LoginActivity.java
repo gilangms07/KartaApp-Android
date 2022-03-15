@@ -40,7 +40,6 @@ public class LoginActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.etEmail);
         edtPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        tvRegister = findViewById(R.id.tvRegister);
         initView();
     }
 
@@ -53,11 +52,6 @@ public class LoginActivity extends AppCompatActivity {
             );
 
             login(request);
-        });
-
-        tvRegister.setOnClickListener(v -> {
-            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-            startActivity(intent);
         });
     }
 

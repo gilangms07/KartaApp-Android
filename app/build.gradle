@@ -58,6 +58,10 @@ dependencies {
     debugImplementation 'com.facebook.soloader:soloader:0.10.1'
     debugImplementation 'com.facebook.flipper:flipper-network-plugin:0.98.0'
     releaseImplementation 'com.facebook.flipper:flipper-noop:0.98.0'
+
+    implementation 'com.itextpdf:itextg:5.5.10'
+    // For developers using AndroidX in their applications
+    implementation 'pub.devrel:easypermissions:3.0.0'
 }
 repositories {
     mavenCentral()

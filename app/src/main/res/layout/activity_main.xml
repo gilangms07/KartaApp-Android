@@ -168,27 +168,30 @@
             app:cardCornerRadius="3dp"
             app:cardElevation="3dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="3dp">
+                android:padding="3dp"
+                android:orientation="vertical"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/tvTambahanggota"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tambah Anggota"
-                    android:textSize="18dp"
                     android:textColor="#5e5e5e"
-                    android:textStyle="bold"/>
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
 
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="90dp"
-                    android:src="@drawable/editlogo"
-                    android:layout_alignParentBottom="true"/>
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/editlogo" />
 
-            </RelativeLayout>
+            </LinearLayout>
 
 
         </androidx.cardview.widget.CardView>
@@ -204,19 +207,22 @@
             app:cardCornerRadius="3dp"
             app:cardElevation="3dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="3dp">
+                android:padding="3dp"
+                android:orientation="vertical"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/tvTampilanggota"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tampilkan Anggota"
                     android:textSize="18dp"
                     android:textColor="#5e5e5e"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:gravity="center"/>
 
                 <ImageView
                     android:layout_width="120dp"
@@ -224,13 +230,107 @@
                     android:src="@drawable/tampillogo"
                     android:layout_alignParentBottom="true"/>
 
-            </RelativeLayout>
+            </LinearLayout>
 
 
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="250dp"
+        android:orientation="horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvKegiatan"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvKegiatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kegiatan"
+                    android:textColor="#5e5e5e"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"/>
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/asd" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvKeuangan"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvKeuangan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Keuangan"
+                    android:textSize="18dp"
+                    android:textColor="#5e5e5e"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/uang"
+                    android:layout_alignParentBottom="true"/>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
 
 </LinearLayout>
-
