@@ -51,7 +51,7 @@ import retrofit2.Response;
 
 public class TampilagtActivity extends AppCompatActivity implements TampilAdapterOnClickListener {
 
-    private String pdfPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/Daftar_anggota.pdf";
+    private String pdfPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/daftar_anggota.pdf";
     private final int RC_READ_WRITE_STORAGE = 14045;
     String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 

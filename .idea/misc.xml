@@ -3,12 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_edittampilagt.xml" value="0.1" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_formkeuangan.xml" value="0.22" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_kegiatan.xml" value="0.25" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_keuangan.xml" value="0.25" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_tabelkas.xml" value="0.22" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_tambah_kegiatan.xml" value="0.25" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_tambahagt.xml" value="0.1" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_tampilagt.xml" value="0.22" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_uploadimg.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/layout/item_card_kegiatan.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/layout/view_tabelkas.xml" value="0.25" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/layout/view_tampil_anggota.xml" value="0.22" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/menu/iuranmenu.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/menu/iurantambah.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/menu/kegiatanmenu.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/menu/optionsmenu.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Asus/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.18645833333333334" />
         <entry key="app/src/main/res/layout/activity_edittampilagt.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/view_tampil_anggota.xml" value="0.45" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

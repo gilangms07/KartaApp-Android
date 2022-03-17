@@ -280,12 +280,12 @@
                     android:textColor="#5e5e5e"
                     android:textSize="18dp"
                     android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:gravity="center"/>
 
                 <ImageView
-                    android:layout_width="120dp"
+                    android:layout_width="125dp"
                     android:layout_height="90dp"
-                    android:src="@drawable/asd" />
+                    android:src="@drawable/aaa" />
 
             </LinearLayout>
 
@@ -321,7 +321,7 @@
                     android:gravity="center"/>
 
                 <ImageView
-                    android:layout_width="120dp"
+                    android:layout_width="125dp"
                     android:layout_height="90dp"
                     android:src="@drawable/uang"
                     android:layout_alignParentBottom="true"/>

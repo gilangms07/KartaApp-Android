@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FormKeuanganActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvBKeuangan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        app:cardElevation="13dp"
+        app:cardCornerRadius="6dp"
+        android:focusable="true"
+        app:cardBackgroundColor="@color/teal_700">
+
+
+        <LinearLayout
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tambah Data Iuran"
+                    android:textStyle="bold"
+                    android:textColor="#fff"
+                    android:textSize="25dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Karang Taruna Kelurahan Sindang Palay"
+                    android:textStyle="bold"
+                    android:textColor="#fff"
+                    android:textSize="10dp"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="107dp"
+                    android:layout_height="75dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/kartalogo" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <EditText
+        android:id="@+id/edtNama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cvBKeuangan"
+        android:layout_alignParentStart="true"
+        android:ems="10"
+        android:hint="NAMA"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtMonth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtNama"
+        android:layout_alignParentStart="true"
+        android:ems="10"
+        android:hint="Month"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtMonth" />
+
+    <Button
+        android:id="@+id/btnTambahData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner2"
+        android:layout_alignParentStart="true"
+        android:text="Tambah Data" />
+</RelativeLayout>

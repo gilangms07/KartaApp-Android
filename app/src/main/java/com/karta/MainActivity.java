@@ -3,6 +3,7 @@ package com.karta;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.app.Dialog;
@@ -26,7 +27,7 @@ import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
-    private CardView cvTambahanggota, cvTampilanggota;
+    private CardView cvTambahanggota, cvTampilanggota, cvKegiatan, cvKeuangan;
     private ApiClient apiClient;
     private ImageView imgLogout;
     private TextView tvNamamain, tvRTRW;
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
         cvTampilanggota = findViewById(R.id.cvTampilanggota);
         cvTambahanggota = findViewById(R.id.cvTambahanggota);
+        cvKegiatan = findViewById(R.id.cvKegiatan);
+        cvKeuangan = findViewById(R.id.cvKeuangan);
         tvNamamain = findViewById(R.id.tvNamamain);
         tvRTRW = findViewById(R.id.tvRWRT);
         imgLogout = findViewById(R.id.imgLogout);
@@ -59,6 +62,16 @@ public class MainActivity extends AppCompatActivity {
 
         cvTampilanggota.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, TampilagtActivity.class);
+            startActivity(intent);
+        });
+
+        cvKeuangan.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, KeuanganActivity.class);
+            startActivity(intent);
+        });
+
+        cvKegiatan.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, KegiatanActivity.class);
             startActivity(intent);
         });
         imgLogout.setOnClickListener(v -> {

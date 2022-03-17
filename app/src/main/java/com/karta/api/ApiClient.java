@@ -18,7 +18,7 @@ public class ApiClient {
 
     // Emulator -> 10.0.2.2:8080/
     // Device -> IP Laptop
-    private static final String BASE_URL = "http://10.0.2.2:8080/";
+    private static final String BASE_URL = "http://192.168.18.2:8080/";
 
     private static Retrofit retrofit;
 

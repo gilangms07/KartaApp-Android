@@ -2,6 +2,10 @@ package com.karta.api
 
 import com.karta.model.delete.DeleteResponse
 import com.karta.model.edit.EditResponse
+import com.karta.model.iuran.IuranRequest
+import com.karta.model.iuran.IuranResponse
+import com.karta.model.kegiatan.KegiatanRequest
+import com.karta.model.kegiatan.KegiatanResponse
 import com.karta.model.login.LoginRequest
 import com.karta.model.login.LoginResponse
 import com.karta.model.register.RegisterRequest
@@ -34,4 +38,16 @@ interface UserService {
 
     @GET("/api/get_profile")
     fun getUser(@Query("email") email: String): Call<UserResponse>
+
+    @POST("/api/create_collective")
+    fun buatIuran(@Body request: IuranRequest): Call<IuranResponse>
+
+    @GET("/api/get_collective_list")
+    fun daftarIuran(): Call<List<IuranResponse>>
+
+    @POST("/api/create_activity")
+    fun buatKegiatan(@Body request: KegiatanRequest): Call<KegiatanResponse>
+
+    @GET("/api/get_activity_list")
+    fun daftarKegiatan(): Call<List<KegiatanResponse>>
 }
