@@ -9,4 +9,8 @@ data class IuranRequest(
         val name: String,
         @SerializedName("month")
         val month: String,
+        @SerializedName("status")
+        val status: String,
+        @SerializedName("rt")
+        val rt: String
 )

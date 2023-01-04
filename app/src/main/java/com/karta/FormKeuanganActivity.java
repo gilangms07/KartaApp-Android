@@ -24,22 +24,24 @@ import retrofit2.Response;
 public class FormKeuanganActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     StatusAdapter adapter;
     ApiClient apiClient;
-    EditText edtRtrw, edtNama;
+    EditText edtStatus, edtNama, edtUrt;
     Button btnTambahData;
+    Spinner spinner;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formkeuangan);
         apiClient = new ApiClient(this);
-        // findView didieu
-        edtRtrw = findViewById(R.id.edtNama);
+        edtStatus = findViewById(R.id.edtStatus);
         edtNama = findViewById(R.id.edtNama);
+        edtUrt = findViewById(R.id.edtUrt);
         btnTambahData = findViewById(R.id.btnTambahData);
-        Spinner spinner = (Spinner) findViewById(R.id.spinner2);
+        spinner = (Spinner) findViewById(R.id.spinner2);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.planets_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+        initView();
     }
 
     private void initView() {
@@ -47,8 +49,13 @@ public class FormKeuanganActivity extends AppCompatActivity implements AdapterVi
             @Override public void onClick(View v) {
                 long id = 0;
                 String name = edtNama.getText().toString();
-                //String month
-                //IuranRequest request = new IuranRequest()
+                String month = spinner.getSelectedItem().toString();
+                String rt = edtUrt.getText().toString();
+                String status = edtStatus.getText().toString();
+                if (name != null && name != "" && month != null && month != "" && rt != null && rt!= "" && status != null && status != ""){
+                    IuranRequest request = new IuranRequest(id, name, month, status, rt);
+                    buatIuran(request);
+                }
             }
         });
     }

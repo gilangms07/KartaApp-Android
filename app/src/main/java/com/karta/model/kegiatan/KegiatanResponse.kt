@@ -11,4 +11,6 @@ data class KegiatanResponse(
         val name: String,
         @SerializedName("description")
         val description: String,
+        @SerializedName("rt")
+        val rt: String
 )

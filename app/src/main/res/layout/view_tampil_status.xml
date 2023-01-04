@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
-    android:backgroundTint="@color/birumuda"
+    android:backgroundTint="@color/yellow"
     android:elevation="8dp"
     android:foregroundTint="#003A1A1A">
 
@@ -16,7 +16,7 @@
 
 
         <TextView
-            android:id="@+id/tvNamatampil"
+            android:id="@+id/tvNamaketua"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -25,13 +25,13 @@
             android:fontFamily="@font/montserrat"
             android:textStyle="bold"
             android:textSize="18dp"
-            android:text="Nama"
+            android:text="Nama Ketua"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvRtrwtampil"
+            android:id="@+id/tvNamawakil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -39,13 +39,14 @@
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/montserrat"
             android:textStyle="bold"
-            android:text="RTRW"
+            android:textSize="18dp"
+            android:text="Nama Wakil"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNamatampil" />
+            app:layout_constraintTop_toBottomOf="@+id/tvNamaketua" />
 
         <TextView
-            android:id="@+id/tvEmailtampil"
+            android:id="@+id/tvStatusrt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -53,13 +54,29 @@
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/montserrat"
             android:textStyle="bold"
-            android:text="Email"
+            android:textSize="18dp"
+            android:text="RT"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvRtrwtampil" />
+            app:layout_constraintTop_toBottomOf="@+id/tvNamawakil" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="Status"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvStatusrt" />
 
         <Button
-            android:id="@+id/btnEdittampil"
+            android:id="@+id/btnEditstatus"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -67,18 +84,18 @@
             android:backgroundTint="@color/green"
             android:drawableLeft="@drawable/ic_baseline_edit_24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEmailtampil" />
+            app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
 
         <Button
-            android:id="@+id/btnHapustampil"
+            android:id="@+id/btnHapusstatus"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/red"
             android:drawableRight="@drawable/ic_baseline_delete_24"
-            app:layout_constraintStart_toEndOf="@+id/btnEdittampil"
-            app:layout_constraintTop_toBottomOf="@+id/tvEmailtampil" />
+            app:layout_constraintStart_toEndOf="@+id/btnEditstatus"
+            app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

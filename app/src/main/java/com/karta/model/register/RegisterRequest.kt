@@ -14,5 +14,7 @@ data class RegisterRequest (
         @SerializedName("rw")
         val rw: String,
         @SerializedName("password")
-        val password: String
+        val password: String,
+        @SerializedName("level")
+        val level: Int
         )

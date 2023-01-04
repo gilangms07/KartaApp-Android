@@ -38,6 +38,12 @@ public class KeuanganActivity extends AppCompatActivity implements AdapterView.O
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabelkas);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+        }
+
         apiClient = new ApiClient(this);
         rvKas = findViewById(R.id.rvKas);
      //   Spinner spinner = (Spinner) findViewById(R.id.spinner1);
@@ -45,15 +51,16 @@ public class KeuanganActivity extends AppCompatActivity implements AdapterView.O
        // adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
        // spinner.setAdapter(adapter);
        // spinner.setOnItemSelectedListener(this);
-        setRecyclerView();
+        daftarIuran();
     }
 
-    private void buatIuran(IuranRequest iuran) {
+    private void daftarIuran() {
         apiClient.getUserService().daftarIuran().enqueue(new Callback<List<IuranResponse>>() {
             @Override
             public void onResponse(Call<List<IuranResponse>> call, Response<List<IuranResponse>> response) {
                 if (response.isSuccessful()){
                     Toast.makeText(KeuanganActivity.this, "Berhasil Menampilkan Data", Toast.LENGTH_SHORT).show();
+                    setRecyclerView(response.body());
                 } else {
                     ErrorResponse errorResponse = ErrorAPIConverter.getItemErrorBody(response.errorBody(), KeuanganActivity.this);
                     Toast.makeText(KeuanganActivity.this, errorResponse.getError(), Toast.LENGTH_SHORT).show();
@@ -69,7 +76,6 @@ public class KeuanganActivity extends AppCompatActivity implements AdapterView.O
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.iuranmenu, menu);
         return true;
@@ -80,24 +86,18 @@ public class KeuanganActivity extends AppCompatActivity implements AdapterView.O
         if (item.getItemId() == R.id.menuiuran) {
             Intent intent = new Intent(KeuanganActivity.this, FormKeuanganActivity.class);
             startActivity(intent);
+        } else {
+            finish();
         }
         return true;
     }
 
 
-    private void setRecyclerView() {
+    private void setRecyclerView(List<IuranResponse> iuranResponseList) {
         rvKas.setHasFixedSize(true);
         rvKas.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new StatusAdapter(this, getList());
+        adapter = new StatusAdapter(this, iuranResponseList);
         rvKas.setAdapter(adapter);
-    }
-
-    private List<StatusModel> getList(){
-        List<StatusModel> statusModelList = new ArrayList<>();
-        statusModelList.add(new StatusModel("1", "Aditya", "Sudah Bayar"));
-        statusModelList.add(new StatusModel("2", "Maulana", "Sudah Bayar"));
-        statusModelList.add(new StatusModel("3", "Gilang", "Sudah Bayar"));
-        return statusModelList;
     }
 
     @Override
@@ -107,5 +107,11 @@ public class KeuanganActivity extends AppCompatActivity implements AdapterView.O
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        daftarIuran();
     }
 }

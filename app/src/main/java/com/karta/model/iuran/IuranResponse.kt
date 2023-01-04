@@ -11,4 +11,6 @@ class IuranResponse(
         val month: String,
         @SerializedName("status")
         val status: String,
+        @SerializedName("rt")
+        val rt: String
 )

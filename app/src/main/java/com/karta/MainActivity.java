@@ -27,7 +27,7 @@ import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
-    private CardView cvTambahanggota, cvTampilanggota, cvKegiatan, cvKeuangan;
+    private CardView cvTambahanggota, cvTampilanggota, cvKegiatan, cvKeuangan, cvDaftar;
     private ApiClient apiClient;
     private ImageView imgLogout;
     private TextView tvNamamain, tvRTRW;
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         cvTambahanggota = findViewById(R.id.cvTambahanggota);
         cvKegiatan = findViewById(R.id.cvKegiatan);
         cvKeuangan = findViewById(R.id.cvKeuangan);
+        cvDaftar = findViewById(R.id.cvDaftar);
         tvNamamain = findViewById(R.id.tvNamamain);
         tvRTRW = findViewById(R.id.tvRWRT);
         imgLogout = findViewById(R.id.imgLogout);
@@ -74,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, KegiatanActivity.class);
             startActivity(intent);
         });
+
+        cvDaftar.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, StatuskartaActivity.class);
+            startActivity(intent);
+        });
         imgLogout.setOnClickListener(v -> {
             showDialog();
             preferenceUtil.setStatus(false);
@@ -88,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                         if (response.isSuccessful()) {
                             UserResponse userResponse = response.body();
                             tvNamamain.setText(userResponse.getName());
-                            tvRTRW.setText("RT" + userResponse.getRt() + "/ RW" + userResponse.getRw());
+                            tvRTRW.setText("RT " + userResponse.getRt() + "/ RW" + userResponse.getRw());
                         }
                     }
 

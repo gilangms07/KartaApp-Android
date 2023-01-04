@@ -68,7 +68,7 @@ import retrofit2.Response;
             String rw = etRwregister.getText().toString();
             String rt = etRtregister.getText().toString();
             RegisterRequest request = new RegisterRequest(
-                    name, email, alamat, rt, rw, password
+                    name, email, alamat, rt, rw, password, 0
             );
             if (password.equals(passwordkonfirmasi)) {
                 register(request);

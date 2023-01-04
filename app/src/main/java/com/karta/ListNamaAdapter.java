@@ -54,7 +54,7 @@ public class ListNamaAdapter extends RecyclerView.Adapter<ListNamaAdapter.ListVi
         ListViewHolder(View itemview) {
             super(itemview);
             tvNamatampil = itemview.findViewById(R.id.tvNamatampil);
-            tvRTRWtampil = itemview.findViewById(R.id.tvRTRWtampil);
+            tvRTRWtampil = itemview.findViewById(R.id.tvRtrwtampil);
             tvEmailtampil = itemview.findViewById(R.id.tvEmailtampil);
             btnEdittampil = itemview.findViewById(R.id.btnEdittampil);
             btnHapustampil = itemview.findViewById(R.id.btnHapustampil);

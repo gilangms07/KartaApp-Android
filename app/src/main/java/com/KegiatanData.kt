@@ -18,6 +18,12 @@ object KegiatanData {
             "Menyikapi mewabahnya Pandemik Covid-19, organisasi sosial kepemudaan KarangTaruna kelurahan sindangpalay ikut serta membantu dalam mengantisipasi penyebaran Covid-19",
     )
 
+    private val kegiatanRt = arrayOf(
+        "Status Kegiatan dari karang taruna mana",
+        "Status RT",
+        "Karang Taruna RT berapa"
+    )
+
     private val kegiatanPhoto = intArrayOf(
             R.drawable.kt1,
             R.drawable.kt4,
@@ -31,6 +37,7 @@ object KegiatanData {
                 val kegiatan = Kegiatan()
                 kegiatan.name = kegiatanNames[position]
                 kegiatan.deskripsi = kegiatanDeskripsi[position]
+                kegiatan.rt = kegiatanRt[position]
                 kegiatan.photo = kegiatanPhoto[position]
                 list.add(kegiatan)
             }

@@ -66,6 +66,11 @@ public class TampilagtActivity extends AppCompatActivity implements TampilAdapte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tampilagt);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+        }
+
         EasyPermissions.requestPermissions(
                 new PermissionRequest.Builder(this, RC_READ_WRITE_STORAGE, perms)
                         .setRationale(R.string.camera_and_location_rationale)
@@ -111,6 +116,8 @@ public class TampilagtActivity extends AppCompatActivity implements TampilAdapte
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.cetak) {
             createPDFFile(pdfPath);
+        } else {
+            finish();
         }
         return true;
     }

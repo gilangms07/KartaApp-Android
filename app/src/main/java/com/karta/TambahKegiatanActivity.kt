@@ -39,6 +39,7 @@ class TambahKegiatanActivity : AppCompatActivity() {
     private lateinit var edtDeskripsi: EditText
     private lateinit var btnTake: Button
     private lateinit var btnKirimKegiatan: Button
+    private lateinit var edtRt :EditText
     private lateinit var apiClient: ApiClient
 
     private var gambarKegiatan: Bitmap? = null
@@ -55,18 +56,21 @@ class TambahKegiatanActivity : AppCompatActivity() {
         ivResult = findViewById(R.id.ivResult)
         edtNama = findViewById(R.id.edtNamaKegiatan)
         edtDeskripsi = findViewById(R.id.edtDeskripsi)
+        edtRt = findViewById(R.id.edtRt)
         btnTake = findViewById(R.id.btnTake)
         btnKirimKegiatan = findViewById(R.id.btnKirimKegiatan)
         btnKirimKegiatan.setOnClickListener {
             val nama = edtNama.text.toString()
             val deskripsi = edtDeskripsi.text.toString()
+            val rt = edtRt.text.toString()
             if (gambarKegiatan != null && nama.isNotEmpty() && deskripsi.isNotEmpty()) {
                 val base64Image = ImageUtil.convert(gambarKegiatan!!)
                 val kegiatanRequest = KegiatanRequest(
                         id = 0,
                         photo = base64Image,
                         name = nama,
-                        description = deskripsi
+                        description = deskripsi,
+                        rt = rt
                 )
                 kirimKegiatan(kegiatanRequest)
             } else {

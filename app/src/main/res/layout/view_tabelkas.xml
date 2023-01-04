@@ -3,18 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:stretchColumns="1,2,3">
+    android:stretchColumns="1,2,3,4">
 
     <TableRow>
         <TextView
-            android:id="@+id/tvKasRTRW"
+            android:id="@+id/tvKasNama"
             android:textSize="16dp"
             android:gravity="center"
             android:padding="3dip"
             android:layout_column="1"/>
 
         <TextView
-            android:id="@+id/tvKasNama"
+            android:id="@+id/tvKasMonth"
+            android:textSize="16dp"
+            android:gravity="right"
+            android:padding="3dip"
+            android:layout_column="1"/>
+
+        <TextView
+            android:id="@+id/tvKasRt"
             android:textSize="16dp"
             android:gravity="right"
             android:padding="3dip"

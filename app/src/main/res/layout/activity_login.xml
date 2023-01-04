@@ -53,5 +53,14 @@
             android:backgroundTint="@color/green"
             android:imeOptions="actionSend"/>
 
+        <Button
+            android:id="@+id/btnReg"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:backgroundTint="@color/green" />
+
+
 
 </LinearLayout>

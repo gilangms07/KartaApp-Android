@@ -19,8 +19,9 @@
             android:id="@+id/img_item_photo"
             android:layout_width="300px"
             android:layout_height="300px"
+            android:layout_marginTop="17dp"
             android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/tv_item_name"
@@ -40,13 +41,37 @@
             android:id="@+id/tv_item_deskripsi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_item_rt"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_toEndOf="@+id/img_item_photo"
+            android:ellipsize="end"
+            android:maxLines="5"
+            android:text="Deskripsi" />
+
+        <TextView
+            android:id="@+id/tv_item_rt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/tv_item_name"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_toEndOf="@+id/img_item_photo"
             android:ellipsize="end"
             android:maxLines="5"
-            android:text="Deskripsi"/>
+            android:text="RT" />
+
+        <Button
+            android:id="@+id/btnHapuskeg"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_item_deskripsi"
+            android:layout_marginStart="315dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/red"
+            android:drawableRight="@drawable/ic_baseline_delete_24"
+            android:gravity="end" />
 
     </RelativeLayout>
 

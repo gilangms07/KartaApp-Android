@@ -10,5 +10,7 @@ data class KegiatanRequest(
         @SerializedName("name")
         val name: String,
         @SerializedName("description")
-        val description: String
+        val description: String,
+        @SerializedName("rt")
+        val rt: String
 )

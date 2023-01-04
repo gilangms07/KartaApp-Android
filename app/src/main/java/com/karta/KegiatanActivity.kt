@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.Kegiatan
 import com.KegiatanData
+import com.karta.api.ActivityResponse
 import com.karta.api.ApiClient
 import com.karta.model.kegiatan.KegiatanResponse
 import retrofit2.Call
@@ -25,6 +27,12 @@ class KegiatanActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kegiatan)
+
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+            supportActionBar!!.setHomeButtonEnabled(true)
+        }
+
         apiClient = ApiClient(this)
 
         rvKegiatan = findViewById(R.id.rvKegiatan)
@@ -36,7 +44,9 @@ class KegiatanActivity : AppCompatActivity() {
 
     private fun showRecyclerView(response: List<KegiatanResponse>) {
         rvKegiatan.layoutManager = LinearLayoutManager(this)
-        val listKegiatanAdapter = KegiatanAdapter(response)
+        val listKegiatanAdapter = KegiatanAdapter(response) {
+            showDialog(it)
+        }
         rvKegiatan.adapter = listKegiatanAdapter
     }
 
@@ -50,6 +60,8 @@ class KegiatanActivity : AppCompatActivity() {
         if (item.itemId == R.id.menukegiatan) {
             val intent = Intent(this@KegiatanActivity, TambahKegiatanActivity::class.java)
             startActivity(intent)
+        } else {
+            finish()
         }
         return true
     }
@@ -70,8 +82,45 @@ class KegiatanActivity : AppCompatActivity() {
         })
     }
 
+    private fun deleteKegiatan(kegiatanResponse: KegiatanResponse) {
+        apiClient.userService.hapusKegiatan(kegiatanResponse.id).enqueue(object : Callback<ActivityResponse> {
+            override fun onResponse(
+                call: Call<ActivityResponse>,
+                response: Response<ActivityResponse>
+            ) {
+                if (response.isSuccessful && response.body() != null) {
+                    getKegiatanResponse()
+                    Toast.makeText(this@KegiatanActivity, "Berhasil Hapus Kegiatan ${kegiatanResponse.name}", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this@KegiatanActivity, "Gagal Menghapus Kegiatan ${kegiatanResponse.name}", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ActivityResponse>, t: Throwable) {
+                Toast.makeText(this@KegiatanActivity, "Gagal Menghapus Kegiatan ${kegiatanResponse.name}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
     override fun onResume() {
         super.onResume()
         getKegiatanResponse()
+    }
+
+    private fun showDialog(kegiatanResponse: KegiatanResponse) {
+        val alertDialogBuilder = AlertDialog.Builder(this)
+        alertDialogBuilder.setTitle("Yakin ingin Hapus?")
+        alertDialogBuilder
+            .setMessage("Kelik Ya untuk Menghapus!")
+            .setIcon(R.drawable.samm)
+            .setCancelable(false)
+            .setPositiveButton("Ya") { dialog, id ->
+                deleteKegiatan(kegiatanResponse)
+            }
+            .setNegativeButton(
+                "Tidak"
+            ) { dialog, id -> dialog.cancel() }
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.show()
     }
 }

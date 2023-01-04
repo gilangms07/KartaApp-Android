@@ -73,30 +73,40 @@
         android:layout_below="@id/cvBKeuangan"
         android:layout_alignParentStart="true"
         android:ems="10"
-        android:hint="NAMA"
+        android:hint="Nama"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/edtMonth"
+        android:id="@+id/edtUrt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtNama"
+        android:layout_below="@+id/spinner2"
         android:layout_alignParentStart="true"
         android:ems="10"
-        android:hint="Month"
+        android:hint="RT"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtUrt"
+        android:layout_alignParentStart="true"
+        android:ems="10"
+        android:hint="Status"
         android:inputType="textPersonName" />
 
     <Spinner
         android:id="@+id/spinner2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edtMonth" />
+        android:layout_below="@id/edtNama" />
 
     <Button
         android:id="@+id/btnTambahData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner2"
+        android:layout_below="@+id/edtStatus"
         android:layout_alignParentStart="true"
         android:text="Tambah Data" />
 </RelativeLayout>

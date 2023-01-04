@@ -83,6 +83,14 @@
             android:layout_column="1"/>
 
         <TextView
+            android:text="RT"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_column="1"/>
+
+        <TextView
             android:text="STATUS"
             android:textSize="16dp"
             android:textStyle="bold"

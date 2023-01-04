@@ -14,5 +14,5 @@ data class TambahRequest (
         @SerializedName("email")
         val email: String,
         @SerializedName("phone_number")
-        val phoneNumber: String,
+        val phoneNumber: String
         )

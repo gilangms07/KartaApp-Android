@@ -10,6 +10,8 @@ import com.karta.model.login.LoginRequest
 import com.karta.model.login.LoginResponse
 import com.karta.model.register.RegisterRequest
 import com.karta.model.register.RegisterResponse
+import com.karta.model.status.StatusRequest
+import com.karta.model.status.StatusResponse
 import com.karta.model.tambah.TambahRequest
 import com.karta.model.tambah.TambahResponse
 import com.karta.model.tampil.TampilResponse
@@ -27,14 +29,26 @@ interface UserService {
     @POST("/api/add_member")
     fun tambah(@Body request: TambahRequest): Call<TambahResponse>
 
+    @POST("/api/add_status")
+    fun tambahstatus(@Body request: StatusRequest): Call<StatusResponse>
+
     @GET("/api/all_member")
     fun tampil(): Call<List<TampilResponse>>
+
+    @GET("/api/all_status")
+    fun status(): Call<List<StatusResponse>>
 
     @POST("/api/delete_member")
     fun delete(@Body request: TampilResponse): Call<DeleteResponse>
 
+    @DELETE("/api/delete_status")
+    fun deletestatus(@Query("id") id: Long) : Call<DeleteResponse>
+
     @PUT("/api/update_member")
     fun update(@Body request: TampilResponse): Call<EditResponse>
+
+    @PUT("/api/update_status")
+    fun updatestatus(@Body request: StatusRequest): Call<StatusResponse>
 
     @GET("/api/get_profile")
     fun getUser(@Query("email") email: String): Call<UserResponse>
@@ -50,4 +64,10 @@ interface UserService {
 
     @GET("/api/get_activity_list")
     fun daftarKegiatan(): Call<List<KegiatanResponse>>
+
+    @DELETE("/api/delete_activity")
+    fun hapusKegiatan(@Query("id") id: Long): Call<ActivityResponse>
+
+    @PUT("/api/aktivasi_user")
+    fun aktivasiuser(@Query("id") id: Long): Call<UserResponse>
 }

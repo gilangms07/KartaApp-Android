@@ -22,8 +22,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText edtEmail, edtPassword;
-    private Button btnLogin;
-    private TextView tvRegister;
+    private Button btnLogin, btnReg;
 
     private ApiClient apiClient;
 
@@ -39,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
 
         edtEmail = findViewById(R.id.etEmail);
         edtPassword = findViewById(R.id.etPassword);
+        btnReg = findViewById(R.id.btnReg);
         btnLogin = findViewById(R.id.btnLogin);
         initView();
     }
@@ -52,6 +52,11 @@ public class LoginActivity extends AppCompatActivity {
             );
 
             login(request);
+        });
+
+        btnReg.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
         });
     }
 
@@ -70,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                             preferenceUtil.setStatus(true);
                         } else {
                             ErrorResponse errorResponse = ErrorAPIConverter.getItemErrorBody(response.errorBody(), LoginActivity.this);
-                            Toast.makeText(LoginActivity.this, errorResponse.getError(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Akun Belum DiAktifkan", Toast.LENGTH_SHORT).show();
                         }
                     }
 
