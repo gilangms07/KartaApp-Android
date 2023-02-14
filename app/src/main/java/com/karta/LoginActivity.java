@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                             preferenceUtil.setStatus(true);
                         } else {
                             ErrorResponse errorResponse = ErrorAPIConverter.getItemErrorBody(response.errorBody(), LoginActivity.this);
-                            Toast.makeText(LoginActivity.this, "Akun belum aktif", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, errorResponse.getError(), Toast.LENGTH_SHORT).show();
                         }
                     }
 
