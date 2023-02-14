@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.karta.api.ApiClient;
@@ -21,6 +22,7 @@ public class TambahstatusActivity extends AppCompatActivity {
 
     private EditText etNamaketua, etNamaWakil, etRtStatus, etStatus;
     private Button btnTambahstatus;
+    private TextView tvTambahdaftar;
     
     private ApiClient apiClient;
 
@@ -29,10 +31,6 @@ public class TambahstatusActivity extends AppCompatActivity {
 
     private StatusResponse statusResponse;
 
-    /**
-     * lamun isEdit na false, berarti keur nyieun data anyar.
-     * lamun isEdit na true, berarti keur ngedit data.
-     */
     private boolean isEdit = false;
 
     @Override
@@ -52,6 +50,7 @@ public class TambahstatusActivity extends AppCompatActivity {
         etRtStatus = findViewById(R.id.etRtStatus);
         etStatus = findViewById(R.id.etStatus);
         btnTambahstatus = findViewById(R.id.btnTambahstatus);
+        tvTambahdaftar = findViewById(R.id.tvTambahdaftar);
         initView();
 
         if (getIntent().hasExtra(DATA_STATUS)){
@@ -62,8 +61,8 @@ public class TambahstatusActivity extends AppCompatActivity {
 
         if (isEdit) {
             btnTambahstatus.setText("Ubah Data");
+            tvTambahdaftar.setText("Edit Data Daftar Karang Taruna");
         }
-        
     }
 
     private void tampilStatus() {

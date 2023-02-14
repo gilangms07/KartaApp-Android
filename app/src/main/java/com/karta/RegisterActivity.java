@@ -70,6 +70,10 @@ import retrofit2.Response;
             RegisterRequest request = new RegisterRequest(
                     name, email, alamat, rt, rw, password, 0
             );
+            if (name.equals("") || email.equals("") || password.equals("") || passwordkonfirmasi.equals("") || alamat.equals("") || rw.equals("") || rt.equals("")) {
+                Toast.makeText(this, "Harap isi semua data", Toast.LENGTH_SHORT).show();
+                return;
+            }
             if (password.equals(passwordkonfirmasi)) {
                 register(request);
             } else{

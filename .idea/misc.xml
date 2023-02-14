@@ -22,7 +22,16 @@
         <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/menu/kegiatanmenu.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/KartaApp/app/src/main/res/menu/optionsmenu.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/Asus/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.142" />
+        <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/drawable/ic_baseline_active.xml" value="0.142" />
+        <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.142" />
+        <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.142" />
+        <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/drawable/ic_baseline_clear_24.xml" value="0.142" />
+        <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.142" />
+        <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.142" />
+        <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_admin.xml" value="0.22" />
         <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_daftarkarta.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_editstatus.xml" value="0.203125" />
         <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_edittampilagt.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_formkeuangan.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_kegiatan.xml" value="0.17074275362318841" />
@@ -37,6 +46,7 @@
         <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/layout/activity_tampilagt.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/layout/item_card_kegiatan.xml" value="0.25" />
         <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/layout/view_tabelkas.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/layout/view_tampil_admin.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/layout/view_tampil_anggota.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/layout/view_tampil_status.xml" value="0.203125" />
         <entry key="..\:/Users/Skripsi/AndroidStudioProjects/KartaApp/app/src/main/res/menu/kegiatanmenu.xml" value="0.20416666666666666" />

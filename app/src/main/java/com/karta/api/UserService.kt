@@ -1,5 +1,6 @@
 package com.karta.api
 
+import com.karta.admin.AdminResponse
 import com.karta.model.delete.DeleteResponse
 import com.karta.model.edit.EditResponse
 import com.karta.model.iuran.IuranRequest
@@ -37,6 +38,9 @@ interface UserService {
 
     @GET("/api/all_status")
     fun status(): Call<List<StatusResponse>>
+
+    @GET("/api/all_admin")
+    fun admin(): Call<List<AdminResponse>>
 
     @POST("/api/delete_member")
     fun delete(@Body request: TampilResponse): Call<DeleteResponse>

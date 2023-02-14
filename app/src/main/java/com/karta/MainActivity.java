@@ -27,7 +27,7 @@ import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
-    private CardView cvTambahanggota, cvTampilanggota, cvKegiatan, cvKeuangan, cvDaftar;
+    private CardView cvTambahanggota, cvTampilanggota, cvKegiatan, cvKeuangan, cvDaftar, cvAdmin;
     private ApiClient apiClient;
     private ImageView imgLogout;
     private TextView tvNamamain, tvRTRW;
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         cvKegiatan = findViewById(R.id.cvKegiatan);
         cvKeuangan = findViewById(R.id.cvKeuangan);
         cvDaftar = findViewById(R.id.cvDaftar);
+        cvAdmin = findViewById(R.id.cvAdmin);
         tvNamamain = findViewById(R.id.tvNamamain);
         tvRTRW = findViewById(R.id.tvRWRT);
         imgLogout = findViewById(R.id.imgLogout);
@@ -80,6 +81,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, StatuskartaActivity.class);
             startActivity(intent);
         });
+
+        cvAdmin.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+            startActivity(intent);
+        });
+
         imgLogout.setOnClickListener(v -> {
             showDialog();
             preferenceUtil.setStatus(false);
