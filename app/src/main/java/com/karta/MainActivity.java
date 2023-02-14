@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
     private PreferenceUtil preferenceUtil;
 
+    private UserResponse userResponse;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,8 +85,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         cvAdmin.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, AdminActivity.class);
-            startActivity(intent);
+            if (userResponse.getLevel() == 2) {
+                Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+                startActivity(intent);
+            } else {
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+                alertDialog.setTitle("Peringatan");
+                alertDialog.setMessage("Menu hanya bisa diakses oleh Super Admin");
+                alertDialog.create().show();
+            }
         });
 
         imgLogout.setOnClickListener(v -> {
@@ -99,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                         if (response.isSuccessful()) {
-                            UserResponse userResponse = response.body();
+                            userResponse = response.body();
                             tvNamamain.setText(userResponse.getName());
                             tvRTRW.setText("RT " + userResponse.getRt() + "/ RW" + userResponse.getRw());
                         }
