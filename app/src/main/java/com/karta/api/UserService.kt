@@ -17,6 +17,7 @@ import com.karta.model.tambah.TambahRequest
 import com.karta.model.tambah.TambahResponse
 import com.karta.model.tampil.TampilResponse
 import com.karta.model.user.UserResponse
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -39,8 +40,8 @@ interface UserService {
     @GET("/api/all_status")
     fun status(): Call<List<StatusResponse>>
 
-    @GET("/api/all_admin")
-    fun admin(): Call<List<AdminResponse>>
+    @GET("/api/get_user_inactive")
+    fun admin(): Call<AdminResponse>
 
     @POST("/api/delete_member")
     fun delete(@Body request: TampilResponse): Call<DeleteResponse>
@@ -74,4 +75,7 @@ interface UserService {
 
     @PUT("/api/aktivasi_user")
     fun aktivasiuser(@Query("id") id: Long): Call<UserResponse>
+
+    @POST("/api/delete_user")
+    fun deleteUser(@Query("id") id: Long): Call<ResponseBody>
 }

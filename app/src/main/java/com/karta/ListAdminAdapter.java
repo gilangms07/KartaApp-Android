@@ -11,19 +11,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.karta.admin.AdminResponse;
+import com.karta.model.login.LoginResponse;
 
 import java.util.List;
 
 interface AdminAdapterOnClickListener {
-    void onAccept(AdminResponse adminResponse);
-    void onReject(AdminResponse adminResponse);
+    void onAccept(LoginResponse adminResponse);
+    void onReject(LoginResponse adminResponse);
 }
 
 public class ListAdminAdapter extends RecyclerView.Adapter<ListAdminAdapter.ListViewHolder> {
     private AdminAdapterOnClickListener clickListener;
-    private List<AdminResponse> listAdmin;
+    private List<LoginResponse> listAdmin;
 
-    public ListAdminAdapter(AdminAdapterOnClickListener clickListener, List<AdminResponse> listAdmin) {
+    public ListAdminAdapter(AdminAdapterOnClickListener clickListener, List<LoginResponse> listAdmin) {
         this.clickListener = clickListener;
         this.listAdmin = listAdmin;
     }
@@ -55,9 +56,9 @@ public class ListAdminAdapter extends RecyclerView.Adapter<ListAdminAdapter.List
             btnReject = itemview.findViewById(R.id.btnReject);
         }
 
-        public void bind(AdminResponse adminResponse) {
-            tvNamaadmin.setText("Nama Admin: " + adminResponse.getNameAdmin());
-            tvEmailadmin.setText("Email Admin: " + adminResponse.getEmailAdmin());
+        public void bind(LoginResponse adminResponse) {
+            tvNamaadmin.setText("Nama Admin: " + adminResponse.getName());
+            tvEmailadmin.setText("Email Admin: " + adminResponse.getEmail());
             btnAccept.setOnClickListener(v -> {
                 clickListener.onAccept(adminResponse);
             });
